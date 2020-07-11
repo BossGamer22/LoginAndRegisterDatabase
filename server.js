@@ -34,6 +34,7 @@ Api.get("/api/register", function(req, res){
         }else{
             fs.writeFile(`datas/${Username}.txt`, Password, function(Error){
                 if(Error){
+                    console.log("[Error Snipper] "+Error)
                     FailedTable.error = "failed to register."
                     res.json(FailedTable)
                 }else{
