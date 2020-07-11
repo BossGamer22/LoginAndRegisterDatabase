@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "j2url": "^1.0.1"
+    "j2url": "^1.0.1",
+    "write": "^2.0.0"
   }
 }

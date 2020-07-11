@@ -2,6 +2,7 @@
 const PORTS = process.env.PORT || 8080;
 const Express = require("express");
 const j2url = require("j2url");
+const write = require("write");
 const fs = require("fs");
 const { Console } = require("console");
 const Api = Express();
@@ -32,7 +33,7 @@ Api.get("/api/register", function(req, res){
             FailedTable.error = "username already existed."
             res.json(FailedTable)
         }else{
-            fs.writeFile(`datas/${Username}.txt`, Password, function(Error){
+            write(`datas/${Username}.txt`, Password, Error =>{
                 if(Error){
                     console.log("[Error Snipper] "+Error)
                     FailedTable.error = "failed to register."
